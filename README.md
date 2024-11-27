@@ -1,101 +1,135 @@
-Pathfinding Algorithms Visualization
-This project visualizes two popular pathfinding algorithms: A (A-star)* and Dijkstra. It uses Pygame to create a grid-based environment where you can observe how these algorithms find the shortest path from a start point to an end point while avoiding obstacles (walls).
 
-Files in this Repository
-pathfinding_utils.py: Contains shared utilities, such as the Spot class, grid creation, and visualization functions.
-astar.py: Implements the A (A-star)* algorithm.
-dijkstra.py: Implements the Dijkstra algorithm.
-Prerequisites
-To run this project, you need the following Python packages:
+# Pathfinding Visualization Project
 
-pygame: For graphical user interface and visualizations.
-You can install it using pip:
+Welcome to the **Pathfinding Visualization Project**! This tool visualizes two popular pathfinding algorithms: **A*** (A-Star) and **Dijkstra's Algorithm**. The application uses Pygame to display the grid and simulate the algorithms as they find paths between the selected start and end points.
 
-bash
-Copy code
+---
+
+## Features
+
+- **Visualize Pathfinding Algorithms**:
+  - **A\***: A heuristic-based search algorithm.
+  - **Dijkstra's Algorithm**: A non-heuristic shortest-path algorithm.
+  
+- **Interactive Grid**:
+  - Set start and end points.
+  - Create barriers to test algorithm performance.
+  - Reset grid for repeated testing.
+
+- **Real-Time Visualization**:
+  - Watch the algorithms explore the grid and find optimal paths.
+
+---
+
+## Running the Application
+
+### Prerequisites
+
+Ensure you have Python installed (version 3.7 or higher). Install the required library using:
+
+```bash
 pip install pygame
-How to Run
-Clone the repository:
+```
 
-bash
-Copy code
-git clone <repository-url>
-cd pathfinding-visualization
-Run A algorithm*:
+### Steps to Run
 
-To run the A algorithm*, execute the following command:
+1. Clone the repository:
 
-bash
-Copy code
-python astar.py
-Run Dijkstra algorithm:
+   ```bash
+   git clone https://github.com/your_username/pathfinding-visualizer.git
+   cd pathfinding-visualizer
+   ```
 
-To run the Dijkstra algorithm, execute the following command:
+2. Run the program:
 
-bash
-Copy code
-python dijkstra.py
-Features
-Interactive Grid: The grid consists of a grid of squares where you can:
+   ```bash
+   python main.py
+   ```
 
-Left-click to place the start point.
-Right-click to place the end point.
-Left-click to place barriers (walls).
-Right-click to remove barriers or reset the start and end points.
-Algorithms:
+3. Use the controls below to interact with the grid and visualize the algorithms.
 
-A Algorithm*: Uses a heuristic to efficiently find the shortest path.
-Dijkstra Algorithm: Finds the shortest path by exploring all nodes systematically.
-Maze-like Fixed Map: Both algorithms are initialized with a predefined maze (barriers) to test the algorithms with fixed walls.
+---
 
-Customizing the Map
-If you want to modify the maze or the start/end points, you can edit the code directly in the astar.py and dijkstra.py files. The start and end points are predefined at the following positions:
+## How It Works
 
-Start Point: (10, 10)
-End Point: (40, 40)
-You can also modify the maze by changing which grid points are designated as barriers. In the provided code, barriers are added with this line in both algorithms:
+### Controls
 
-python
-Copy code
-for i in range(20, 30):
-    grid[i][25].make_barrier()
-This adds a vertical wall between rows 20 and 30 at column 25.
+- **Grid Interaction**:
+  - **Left Click**: Set the start, end, or barriers.
+  - **Right Click**: Remove an obstacle, start, or end.
 
-Visual Output
-The visualization will display a grid where:
+- **Keyboard**:
+  - **SPACE**: Start the selected algorithm.
+  - **C**: Reset the grid.
 
-Start Point: Orange
-End Point: Turquoise
-Barriers: Black
-Path: Purple (once the algorithm finds it)
-Open nodes: Green
-Closed nodes: Red
-Example Screenshots
-A* Algorithm
+### Algorithms
 
-Dijkstra Algorithm
+1. **A***:
+   - Uses a heuristic function (Manhattan distance).
+   - Combines the cost to reach a node and an estimated cost to the goal.
+   - Faster for goal-oriented searches.
 
-How to Add Your Own Images
-To add your own images of the visualizations:
+2. **Dijkstra's Algorithm**:
+   - Computes the shortest path without using heuristics.
+   - Explores all paths systematically.
 
-Run either the astar.py or dijkstra.py script to generate the pathfinding visualization.
-Take a screenshot of the Pygame window showing the grid and pathfinding process.
-Save the screenshot image(s) and add them to this repository.
-Replace the placeholder paths path/to/astar_example_image.png and path/to/dijkstra_example_image.png in the README with the relative paths to your images.
-Algorithm Descriptions
-A* Algorithm
-The A algorithm* is a pathfinding algorithm that finds the shortest path from a start point to an end point. It uses the following two values to determine the best path:
+---
 
-g-score: The cost of the path from the start to the current point.
-f-score: The estimated total cost (g-score + heuristic) to reach the goal.
-The A* algorithm uses a priority queue to explore nodes with the lowest f-score first. It incorporates a heuristic function to make the search more efficient by prioritizing paths that appear to lead toward the goal.
+## Visual Feedback
 
-Dijkstra Algorithm
-The Dijkstra algorithm finds the shortest path from a starting point to all other points in the grid. Unlike A*, it does not use a heuristic function but instead explores nodes in increasing order of their distance from the start. It is guaranteed to find the shortest path but can be less efficient than A* in certain situations.
+- **Green**: Nodes in the open set.
+- **Red**: Nodes in the closed set.
+- **Purple**: The final path.
+- **Black**: Barriers.
+- **Orange**: Start point.
+- **Turquoise**: End point.
 
-Troubleshooting
-No Pygame Window: Make sure that you have the pygame package installed.
-Slow Performance: If the algorithm runs slowly, consider reducing the grid size by modifying the ROWS variable in astar.py or dijkstra.py (default is 50).
-License
-This project is licensed under the MIT License - see the LICENSE file for details.
+---
+
+## Customization
+
+### Changing Grid Size
+
+Modify the `ROWS` and `WIDTH` constants in `main.py`:
+
+```python
+ROWS = 50  # Number of rows
+WIDTH = 800  # Width of the window
+```
+
+---
+
+## Project Structure
+
+```
+|-- pathfinding_util.py    # Utility functions and Spot class
+|-- astar_algorithm.py     # A* implementation
+|-- dijkstra_algorithm.py  # Dijkstra's implementation
+|-- main.py                # Main script for running the visualization
+```
+
+---
+
+## Future Enhancements
+
+- Add diagonal movement.
+- Include more algorithms (e.g., BFS, DFS).
+- Allow for weighted nodes.
+- Improve UI for easier interaction.
+
+---
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+---
+
+## Contact
+
+For any questions or feedback, feel free to reach out to **[your_email@example.com](mailto:your_email@example.com)** or create an issue in the repository.
+
+---
+
+Enjoy experimenting with pathfinding algorithms! 🎉
 
