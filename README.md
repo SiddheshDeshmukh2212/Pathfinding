@@ -115,6 +115,9 @@ WIDTH = 800  # Width of the window
 |-- astar_algorithm.py     # A* implementation
 |-- dijkstra_algorithm.py  # Dijkstra's implementation
 |-- main.py                # Main script for running the visualization
+|-- images
+    |-- A-star
+    |-- Dijkstra
 ```
 
 ---
