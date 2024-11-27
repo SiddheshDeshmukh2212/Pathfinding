@@ -8,8 +8,8 @@ Welcome to the **Pathfinding Visualization Project**! This tool visualizes two p
 ## Visual Demonstration
 
 <p align="center">
-  <img src="path/to/astar_demo.gif" alt="A* Algorithm Demo" width="45%" />
-  <img src="path/to/dijkstra_demo.gif" alt="Dijkstra Algorithm Demo" width="45%" />
+  <img src="image/A-star.gif" alt="A* Algorithm Demo" width="45%" />
+  <img src="image/Dijkstra.gif" alt="Dijkstra Algorithm Demo" width="45%" />
 </p>
 
 ---
