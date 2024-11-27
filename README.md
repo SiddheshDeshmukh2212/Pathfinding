@@ -5,6 +5,15 @@ Welcome to the **Pathfinding Visualization Project**! This tool visualizes two p
 
 ---
 
+## Visual Demonstration
+
+<p align="center">
+  <img src="path/to/astar_demo.gif" alt="A* Algorithm Demo" width="45%" />
+  <img src="path/to/dijkstra_demo.gif" alt="Dijkstra Algorithm Demo" width="45%" />
+</p>
+
+---
+
 ## Features
 
 - **Visualize Pathfinding Algorithms**:
@@ -109,27 +118,3 @@ WIDTH = 800  # Width of the window
 ```
 
 ---
-
-## Future Enhancements
-
-- Add diagonal movement.
-- Include more algorithms (e.g., BFS, DFS).
-- Allow for weighted nodes.
-- Improve UI for easier interaction.
-
----
-
-## License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
-
----
-
-## Contact
-
-For any questions or feedback, feel free to reach out to **[your_email@example.com](mailto:your_email@example.com)** or create an issue in the repository.
-
----
-
-Enjoy experimenting with pathfinding algorithms! 🎉
-
